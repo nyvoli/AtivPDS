@@ -5,45 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="loginstyle.css">
+
+    <!-- Importação da fonte Nunito do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    
-      <script>
-        function validacao(event){
-        event.preventDefault();
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
-        const password = document.getElementById('senha').value;      
-        if (password.length < 8) {
-            alert("Senha inválida");
-            return false;
-        } 
-        window.location.href = "nayara.html"; 
+    <script>
+        /**
+         * Função: validacao(event)
+         * -----------------------------------------
+         * Responsável por validar o campo de senha antes do envio do formulário.
+         * 
+         * Parâmetros:
+         *  - event: evento disparado no momento do envio do formulário (submit).
+         * 
+         * Comportamento:
+         *  1. Impede o envio padrão do formulário (para evitar recarregar a página).
+         *  2. Obtém o valor do campo de senha pelo ID "senha".
+         *  3. Verifica se a senha possui pelo menos 8 caracteres.
+         *  4. Se for menor que 8, exibe um alerta e impede a navegação.
+         *  5. Se válida, redireciona o usuário para a página "nayara.html".
+         */
+        function validacao(event) {
+            event.preventDefault(); // Impede o comportamento padrão do submit
+
+            const password = document.getElementById('senha').value; // Captura o valor do campo de senha
+
+            if (password.length < 8) {
+                alert("Senha inválida"); // Mostra alerta caso a senha seja curta
+                return false; // Cancela o envio
+            }
+
+            // Se a senha for válida, redireciona o usuário
+            window.location.href = "nayara.html";
         }
     </script>
+</head>
 
-    </head>
 <body>
     <div class="main">
+        <!-- Área da imagem do lado esquerdo -->
         <div id="item">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfkzaxisGafYH_hfII6RoknrD8rqgrJW-5rYwWeXtoU2PTsZZYn8VCqfyLemcnLSlRgeqq9GZhRZHDQ-7suZCLSf5FG1-usMgM3QoSG_CD1h0fsLj8N-OP3mrXZ9U94It3dJe3ygcI7u0a/s1600/3%25D1%2583%25D1%2586%25D0%25B2%25D1%258B.jpg" class="imagem">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfkzaxisGafYH_hfII6RoknrD8rqgrJW-5rYwWeXtoU2PTsZZYn8VCqfyLemcnLSlRgeqq9GZhRZHDQ-7suZCLSf5FG1-usMgM3QoSG_CD1h0fsLj8N-OP3mrXZ9U94It3dJe3ygcI7u0a/s1600/3%25D1%2583%25D1%2586%25D0%25B2%25D1%258B.jpg" 
+                 class="imagem">
         </div>
+
+        <!-- Área do formulário de login -->
         <div id="item">
             <p>Fazer Login</p>
+
+            <!-- O formulário chama a função de validação ao ser enviado -->
             <form id="formulário" onsubmit="validacao(event)" action="" method="post">
+
+                <!-- Campo de e-mail -->
                 <div class="inputBox">
                     <input type="email" name="email" id="email" class="inputUser" required> 
                     <label for="email" class="labelInput">E-mail</label><br>
                 </div>
+
+                <!-- Campo de senha -->
                 <div class="inputBox">
                     <input type="password" name="senha" id="senha" class="inputUser" required> 
                     <label for="senha" class="labelInput">Senha</label><br>
                 </div>
-                    <input type="submit" id="botao" class="botao" value="Entrar" required>
-                    </form>
 
-            <t>Não é um membro? <a href="create.html"> Se inscreva!</a></t><br>
-           
+                <!-- Botão de envio -->
+                <input type="submit" id="botao" class="botao" value="Entrar" required>
+            </form>
+
+            <!-- Link para cadastro -->
+            <t>Não é um membro? <a href="create.html">Se inscreva!</a></t><br>
         </div>
     </div>
 </body>
