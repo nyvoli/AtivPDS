@@ -1,0 +1,19 @@
+html{
+    color:#ffc7d8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    transform: translate(-50%,-50%);
+    height: 600px;
+    font-family: "nunito";
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: #EFBACA 50px 50px 100px -20px, #EFA7BD 50px 50px 100px -20px, #F094B0 50px 30px 60px -30px; }
+p{
+    color: #F081A2;
+}
+h1{
+    color: #F081A2;
+}

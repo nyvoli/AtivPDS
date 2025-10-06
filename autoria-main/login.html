@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    
+      <script>
+        function validacao(event){
+        event.preventDefault();
+
+        const password = document.getElementById('senha').value;      
+        if (password.length < 8) {
+            alert("Senha inválida");
+            return false;
+        } 
+        window.location.href = "validado.html"; 
+        }
+    </script>
+
+    </head>
+<body>
+    <div class="main">
+        <div id="item">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfkzaxisGafYH_hfII6RoknrD8rqgrJW-5rYwWeXtoU2PTsZZYn8VCqfyLemcnLSlRgeqq9GZhRZHDQ-7suZCLSf5FG1-usMgM3QoSG_CD1h0fsLj8N-OP3mrXZ9U94It3dJe3ygcI7u0a/s1600/3%25D1%2583%25D1%2586%25D0%25B2%25D1%258B.jpg" class="imagem">
+        </div>
+        <div id="item">
+            <p>Fazer Login</p>
+            <form id="formulário" onsubmit="validacao(event)" action="" method="post">
+                <div class="inputBox">
+                    <input type="email" name="email" id="email" class="inputUser" required> 
+                    <label for="email" class="labelInput">E-mail</label><br>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="senha" id="senha" class="inputUser" required> 
+                    <label for="senha" class="labelInput">Senha</label><br>
+                </div>
+                    <input type="submit" id="botao" class="botao" value="Entrar" required>
+                    </form>
+
+            <t>Não é um membro? <a href="create.html"> Se inscreva!</a></t><br>
+
+        </div>
+    </div>
+</body>
+</html>
