@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="createstyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- carregamento de fontes do Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
+         <!-- JavaScript responsável por validar os campos do formulário -->
         <script>
             function validacao(event){
-            event.preventDefault();
+            event.preventDefault(); // Impede o envio padrão do formulário
 
+            // Obtém os valores dos campos inseridos
             const password = document.getElementById('senha').value;
             const firstname = document.getElementById('name').value;
             const secondname = document.getElementById('sname').value;
@@ -23,15 +26,18 @@
                 alert("A senha deve ter mais que 8 caracteres");
                 return false;
             } 
+            //Validação do nome
             if (firstname.length < 2) {
                 alert("O nome deve ter mais que 2 caracteres");
                 return false;
             }
+            //Validação do sobrenome
             if (secondname.length < 2) {
                 alert("O sobrenome deve ter mais que 2 caracteres");
                 return false;
             } 
-            window.location.href = "validado.html"; 
+            //Redireciona para a página de login
+            window.location.href = "nayara.html"; 
             }
         </script>
 </head>
@@ -40,25 +46,31 @@
         <div id="item">
             <img src="https://i.pinimg.com/736x/1f/80/f7/1f80f720c81db80faea986e62c51d68b.jpg" class="imagem">
         </div>
+         <!-- container do formulário de criação de conta -->
         <div id="item">
             <p>Criar Conta</p>
+            <!-- Campo: Nome -->
             <div class="inputBox">
             <form id="formulário" onsubmit="validacao(event)" action="" method="post">
             <input type="text" name="name" id="name" class="inputUser" required> 
             <label for="name" class="labelInput">Nome</label><br>
             </div>
+             <!-- Campo: Sobrenome -->
             <div class="inputBox">
             <input type="text" name="sname" id="sname" class="inputUser" required>   
             <label for="sname" class="labelInput">Sobrenome</label><br> 
         </div>
+            <!-- Campo: E-mail -->
             <div class="inputBox">  
             <input type="email" name="email" id="email" class="inputUser" required> 
             <label for="email" class="labelInput">E-mail</label><br>
         </div>
+         <!-- Campo: Senha -->
         <div class="inputBox">
             <input type="password" name="senha" id="senha" class="inputUser" required> 
             <label for="senha" class="labelInput">Senha</label><br>
         </div>
+        <!-- Botão de envio do formulário -->
             <input type="submit" id="botao" class="botao" value="Entrar">
             <br>
             <t>Já é um membro? <a href="login.html"> Faça login!</a></t><br>
